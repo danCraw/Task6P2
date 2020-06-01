@@ -9,7 +9,7 @@ public class StandartCounter {
 
     public static Map countMeeting(String text) {
         Map<String, Integer> wordToCount = new TreeMap<>();
-        for (String word : text.replaceAll("[^A-Za-zА-Яа-я ]", "").split(" ")) {
+        for (String word : text.replaceAll("[^A-Za-zА-Яа-яЁёáéíñóúüÁÉÍÑÓÚÜ ]", "").split(" ")) {
             if (word.length() > 1) {
                 if (word.substring(0, 1).toUpperCase().equals(word.substring(0, 1)) && !(word.substring(0, 2).toUpperCase().equals(word.substring(0, 2)))) {
                     wordToCount.put(word, wordToCount.getOrDefault(word, 0) + 1);
